@@ -8,20 +8,22 @@ export default class SignUp extends Component{
         // Forgot password, e-mail verification
         return(
             <div className="loginDiv">
-                <h1>Sign-Up</h1>
-                <input placeholder="First Name"></input>
-                <br/>
-                <input placeholder="Last Name"></input>
-                <br/>
-                <input placeholder="E-mail"></input>
-                <br/>
-                <input placeholder="Password"></input>
-                <br/>
-                <input placeholder="Confirm Password"></input>
-                <br/><br/>
-                <button>Signup</button>
-                <br/><br/>
-                <text>Already Registered? </text><a href='/login'>Login</a>
+                <div className="form">
+                    <h1>SIGN UP</h1>
+                    <input placeholder="first name"></input>
+                    <br/>
+                    <input placeholder="last name"></input>
+                    <br/>
+                    <input placeholder="e-mail"></input>
+                    <br/>
+                    <input placeholder="password"></input>
+                    <br/>
+                    <input placeholder="confirm password"></input>
+                    <br/><br/>
+                    <button>signup</button>
+                    <br/><br/>
+                    <text>Already Registered? </text><a href='/login'>Login</a>
+                </div>
             </div>
         );
     }

@@ -1,11 +1,10 @@
 import './App.css';
-import FrontEnd from './FrontEnd/FrontEnd';
-import { Link } from 'react-router-dom';
+import LandingPage from './LandingPage/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <FrontEnd></FrontEnd>
+     <LandingPage></LandingPage>
     </div>
   );
 }
