@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignUp from "./FrontEnd/SignUp";
-import FrontEnd from './FrontEnd/FrontEnd';
+import SignUp from "./SignUp/SignUp";
+import Login from './Login/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/login" element={<FrontEnd />} />
+      <Route path="/login" element={<Login />} />
       <Route path="signup" element={<SignUp />} />
     </Routes>
   </BrowserRouter>,
