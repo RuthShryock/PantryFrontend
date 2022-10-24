@@ -54,7 +54,6 @@ export default class ViewObject{
 
     onMouseMove(event) {
       // Mouse moves
-      //this.controls.target = new THREE.Vector3(1, 1, 1);
       this.camera.position.set( Math.abs(1-(event.clientX/window.innerWidth))+0.75, (event.clientY/window.innerHeight)+0.75, 0.75 );
       this.controls.update();
     }
