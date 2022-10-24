@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader';
 import * as THREE from 'three';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls';
 
 export default class ViewObject{
     constructor(canvasRef) {
@@ -14,7 +15,7 @@ export default class ViewObject{
         this.renderer.setPixelRatio( window.devicePixelRatio );
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 100 );
-        this.camera.position.set(1, 1, 1);
+        this.camera.position.set(1.25, 1.25, 0.75);
         this.scene.add(this.camera);
 
         const loader = new GLTFLoader();
@@ -36,9 +37,10 @@ export default class ViewObject{
         spotLight.position.set(32, 64, 32);
         this.scene.add(spotLight);
         
-        const controls = new OrbitControls(this.camera,this.renderer.domElement);
+        this.controls = new OrbitControls(this.camera,this.renderer.domElement);
+        this.controls.dispose();
 
-        this.renderer.setSize(720, 720);
+        this.renderer.setSize(window.innerWidth/2, window.innerHeight*0.99);
 
     
 
@@ -50,8 +52,11 @@ export default class ViewObject{
       // Whatever you need to do with React props
     }
 
-    onMouseMove() {
+    onMouseMove(event) {
       // Mouse moves
+      //this.controls.target = new THREE.Vector3(1, 1, 1);
+      this.camera.position.set( Math.abs(1-(event.clientX/window.innerWidth))+0.75, (event.clientY/window.innerHeight)+0.75, 0.75 );
+      this.controls.update();
     }
 
     onWindowResize(vpW, vpH) {

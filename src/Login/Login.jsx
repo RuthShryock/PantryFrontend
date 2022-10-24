@@ -23,7 +23,7 @@ export default class Login extends Component{
 
     // ******************* EVENT LISTENERS ******************* //
     mouseMove = (event) => {
-        this.viewOjbect.onMouseMove();
+        this.viewOjbect.onMouseMove(event);
     }
 
     handleResize = () => {
